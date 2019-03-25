@@ -6,8 +6,8 @@ https://drive.google.com/file/d/1NRzv_we5uyb_6FisH59hWB1nsAKKihLz/view
 ## Description
 This tool uses different APIs to let the user seach for concerts, songs and movies using node.js
 
-## Functions
-This tool uses 4 main functions:
+## Commands
+This tool uses 4 main commands:
 * `concert-this`
 * `spotify-this-song`
 * `movie-this`
