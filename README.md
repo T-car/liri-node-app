@@ -15,23 +15,23 @@ This tool uses 4 main functions:
 
 ## Concert-this
 When running this command it uses Bands in Town API to pull:
-* City
-* Date
-* Venue
+1. City
+2. Date
+3. Venue
 
 Example:
 * node liri concert-this Cardi B
 
 ## Movie-this
 When running this command it uses OMDB API to pull:
-       * Title of the movie.
-       * Year the movie came out.
-       * IMDB Rating of the movie.
-       * Rotten Tomatoes Rating of the movie.
-       * Country where the movie was produced.
-       * Language of the movie.
-       * Plot of the movie.
-       * Actors in the movie.
+1. Title of the movie.
+2. Year the movie came out.
+3. IMDB Rating of the movie.
+4. Rotten Tomatoes Rating of the movie.
+5. Country where the movie was produced.
+6. Language of the movie.
+7. Plot of the movie.
+8. Actors in the movie.
 
 Example:
 * node liri movie-this Batman
@@ -41,10 +41,10 @@ Default Search if no input:
 
 ## spotify-this-song
 When running this command it uses Spotify API to pull:
-     * Artist(s)
-     * The song's name
-     * A preview link of the song from Spotify
-     * The album that the song is from
+1. Artist(s)
+2. The song's name
+3. A preview link of the song from Spotify
+4. The album that the song is from
 
 Example:
 * node liri spotify-this-song hey jude
