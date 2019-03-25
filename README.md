@@ -53,4 +53,5 @@ Default Search if no input:
 * Mr. Nobody
 
 ## do-what-it-says
-*It should run `spotify-this-song` for "I Want it That Way," 
+* Uses a random.txt file with preset search functionality
+* It should run `spotify-this-song` for "I Want it That Way," 
