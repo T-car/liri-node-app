@@ -18,7 +18,7 @@ var searchTerm = process.argv.slice(3).join(" ");
 
 //*****Movie function*******
 function movieThis (){
-console.log("in movieThis-------------\n");
+// console.log("in movieThis-------------\n");
 
 //Set default search term
 if (!searchTerm) {
@@ -45,7 +45,7 @@ axios.get("http://www.omdbapi.com/?&apikey=d152e370&t=" + searchTerm)
 };
 
 if (command === "movie-this"){
-    console.log("inside start function")
+    // console.log("inside start function")
 
     movieThis();
 };
@@ -53,7 +53,7 @@ if (command === "movie-this"){
 
 //******Concert function********
 function concertThis (){
-    console.log("in concertThis-------------\n");
+    // console.log("in concertThis-------------\n");
     
     //Calling the OMBD API
     axios.get("https://rest.bandsintown.com/artists/" + searchTerm + "/events?app_id=codingbootcamp")
@@ -82,7 +82,7 @@ function concertThis (){
     };
     
     if (command === "concert-this"){
-        console.log("inside start function")
+        // console.log("inside start function")
 
     
     
@@ -117,7 +117,7 @@ function concertThis (){
 
         //calling function
         if (command === "spotify-this-song"){
-            console.log("inside start function")
+            // console.log("inside start function")
     
         
         
@@ -127,28 +127,28 @@ function concertThis (){
 
     //******DO WHAT IT SAYS function********
     function doWhatItSays (){
-
-        console.log(“selected function doWhatItSays to process *** ” + term);
-     
-     fs.readFile(‘random.txt’, ‘utf8’, function(error, data) {
-     
-     //READ FILE CONTENTS TEST
+     //getting random.txt file 
+     fs.readFile("random.txt", "utf8",function(error, data) {
+        //checking contents
         console.log(data);
       if (error) {
         console.error(error);
       }
-     
-      var dataArray = data.split(‘,’);
-     
+     //splitting items seperated by comma into an array items
+      var dataArray = data.split(",");
+     //
       console.log(dataArray);
-     
+     //command to run,
       command = dataArray[0];
-      term = dataArray[1];
-     
-     //assign text
+      //selecting search term
+      searchTerm = dataArray[1];
      
       spotifyThisSong();
      
       });
-     
+    }
+
+    if (command === "do-what-it-says"){
+        // console.log("inside start function")
+        doWhatItSays();
      };
