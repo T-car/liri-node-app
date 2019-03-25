@@ -7,12 +7,10 @@ var Spotify = require("node-spotify-api");
 var fs = require("fs");
 var spotify = new Spotify(keys.spotify)
 
-// var spotify = new Spotify(keys.spotify);
 
 //command to determine which function to run
 //movie-this, spotify this song, concert-this, do what it says
 var command = process.argv[2];
-
 
 var searchTerm = process.argv.slice(3).join(" ");
 
@@ -93,11 +91,14 @@ function concertThis (){
 
 
     //******Spotify function********
-    function spotifyThisSong(song) {
+    function spotifyThisSong(){
+        if(!searchTerm) {
+            searchTerm = "The Sign";
+        }
         spotify
             .search({
                 type: 'track',
-                query: song,
+                query: searchTerm,
             })
             .then(function (response) {
                 response.tracks.items.forEach(function (track) {
@@ -111,10 +112,43 @@ function concertThis (){
             .catch(function (err) {
                 console.error(err);
             });
-            if (command === "spotify-this"){
-                console.log("inside start function")
+
+        }
+
+        //calling function
+        if (command === "spotify-this-song"){
+            console.log("inside start function")
+    
         
-            
-            
-                spotifyThisSong();
-    }}
+        
+            spotifyThisSong();
+        };
+    
+
+    //******DO WHAT IT SAYS function********
+    function doWhatItSays (){
+
+        console.log(“selected function doWhatItSays to process *** ” + term);
+     
+     fs.readFile(‘random.txt’, ‘utf8’, function(error, data) {
+     
+     //READ FILE CONTENTS TEST
+        console.log(data);
+      if (error) {
+        console.error(error);
+      }
+     
+      var dataArray = data.split(‘,’);
+     
+      console.log(dataArray);
+     
+      command = dataArray[0];
+      term = dataArray[1];
+     
+     //assign text
+     
+      spotifyThisSong();
+     
+      });
+     
+     };
