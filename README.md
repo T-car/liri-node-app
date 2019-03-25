@@ -13,7 +13,7 @@ This tool uses 4 main functions:
 * `movie-this`
 * `do-what-it-says`
 
-##Concert-this
+## Concert-this
 When running this command it uses Bands in Town API to pull:
 * City
 * Date
@@ -22,7 +22,7 @@ When running this command it uses Bands in Town API to pull:
 Example:
 * node liri concert-this Cardi B
 
-##Movie-this
+## Movie-this
 When running this command it uses OMDB API to pull:
        * Title of the movie.
        * Year the movie came out.
@@ -39,7 +39,7 @@ Example:
 Default Search if no input:
 * Mr. Nobody
 
-##spotify-this-song
+## spotify-this-song
 When running this command it uses Spotify API to pull:
      * Artist(s)
      * The song's name
@@ -52,5 +52,5 @@ Example:
 Default Search if no input:
 * Mr. Nobody
 
-##do-what-it-says
+## do-what-it-says
 *It should run `spotify-this-song` for "I Want it That Way," 
